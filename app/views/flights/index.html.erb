@@ -1,0 +1,21 @@
+<h1>Flight Index</h1>
+
+<div class="container">
+	<p>Enter a date or an airport: </p>
+	<%= form_tag(root_url, method: "get") do %>
+		<%= label_tag(:to_options, "To:") %>
+		<%= select_tag(:to_options, options_for_select(@to_options)) %>
+
+		<%= label_tag(:from_options, "From:") %>
+	    <%= select_tag(:from_options, options_for_select(@from_options)) %>
+		
+		<%= label_tag(:passengers, "Passengers:") %>
+		<%= select_tag(:passengers, options_for_select(@number_of_passengers)) %>
+
+		<%= label_tag(:flight_date, "Date: ") %>
+		<%= select_tag(:flight_date, options_from_collection_for_select(Flight.get_dates, 'start_date',
+						:date_formatted)) %>
+
+	    <%= submit_tag("Search") %>
+	<% end %>
+</div>
