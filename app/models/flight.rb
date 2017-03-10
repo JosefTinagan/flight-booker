@@ -10,4 +10,8 @@ class Flight < ApplicationRecord
 	def date_formatted
 		start_date.strftime("%m/%d/%Y")
 	end
+
+	def self.search_flight(params)
+		#flights = Flight.
+	end
 end
