@@ -1,5 +1,4 @@
-<h1>Booking <%= @booking.id %></h1>
-
+<h1>Hello, <%= @passenger.name %></h1>
 <h2>Booking Information:</h2>
 
 <h3>Arriving to: <%= @booking.flight.to_airport.code %></h3>
@@ -7,14 +6,3 @@
 <h3>Date of Departure: <%= @booking.flight.start_date %></h3>
 
 <h3>Flight Duration is estimated to be: <%= @booking.flight.flight_duration %> </h3>
-
-
-<h3>Number of Passengers: <%= @booking.passengers.count %></h3>
-<ul>
-	<% @booking.passengers.each do |passenger| %>
-		<li>
-			Passenger's Name: <%= passenger.name %>
-		    Passenger's Email: <%= passenger.email %>
-		</li>
-	<% end %>
-</ul>
