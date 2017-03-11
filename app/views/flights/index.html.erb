@@ -23,7 +23,7 @@
 <% if @found %>
 	<p>Results: Choose a Flight </p>
 	
-	<%= form_tag('#', method: "get") do %>
+	<%= form_tag(new_booking_url, method: "get") do %>
 		<% @found.each do |flight| %>
 			<%= radio_button_tag(:flight, flight.id) %>
 			<%= label_tag("flight-#{flight.id}", "Flight No: #{flight.id}")%>
